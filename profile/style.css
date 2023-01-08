@@ -1,0 +1,11 @@
+.jumbotron {
+  padding-top: 10.7em;
+  padding-bottom: 10.8em;
+  background-image: url('https://img.freepik.com/free-photo/blurred-abstract-background-interior-view-looking-out-toward-empty-office-lobby-entrance-doors-glass-curtain-wall-with-frame_1339-6364.jpg?size=626&ext=jpg&ga=GA1.1.357158304.1665643559&semt=sph');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hobby {
+  background-color: rgb(200, 200, 200);
+}
