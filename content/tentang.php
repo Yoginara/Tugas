@@ -64,7 +64,7 @@ $pasien = query("SELECT * FROM datapasien");
     <!-- layanan -->
     <section class="page-section bg-warning" id="layanan">
       <div class="container px-4 px-lg-5">
-        <h2 class="text-center mt-0">Lokasi Kami</h2>
+        <h2 class="text-center mt-0">Tentang Kami</h2>
         <hr class="divider" />
         <div class="row gx-4 gx-lg-5">
           <div class="col-lg-3 col-md-6 text-center">
@@ -111,7 +111,7 @@ $pasien = query("SELECT * FROM datapasien");
     <section id="tentang">
       <div class="container mb-5">
         <div class="row text-center mt-5">
-          <h1>Tentang Kami</h1>
+          <h1>Lokasi Kami</h1>
           <p>Kami Terhubung di Seluruh Rumah Sakit di Indonesia</p>
         </div>
         <a href="https://www.google.com/maps/@-2.550221,118.015568,4z?hl=id"><img class="img-fluid center" width="1300px" src="../image/map.png " alt="gambar.png" /></a>
