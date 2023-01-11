@@ -1,11 +1,16 @@
 <?php
-require 'functions.php';
+require 'functions.php'; 
 
+//ambil data url
 $id = $_GET["id"];
-// query data berdasarkan id
-$psn = query("SELECT * FROM datapasien WHERE id= $id")[0];
+
+//query data pasien berdasarkan id
+
+$pasien = query("SELECT * FROM datapasien WHERE id = $id")[0];
 
 if( isset($_POST["submit"]) ){
+
+  
 
       //cek data berhasil diubah atau gagal
       if( ubah($_POST) > 0 ){
@@ -20,7 +25,8 @@ if( isset($_POST["submit"]) ){
       </script>";
       }
 
-}  
+}
+
 
   
 ?>
@@ -30,12 +36,21 @@ if( isset($_POST["submit"]) ){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Ubah Data</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 </head>
 <body>
 <section class="h-100">
+    <!--navbar -->
+    <ul class="nav justify-content-center" style="position: sticky; position: -webkit-stciky; top: 0;  z-index: 1; background-color: #C0C0C0;">
+          <li class="nav-item">
+            <li class="nav-item">
+              <a class="nav-link" href="profile/index.php">Home</a>
+            </li>
+            <a class="nav-link" href="content/index.php">Profile</a>
+          </li>
+        </ul>
       <div class="container h-100">
         <div class="row justify-content-sm-center h-100">
           <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
@@ -44,44 +59,42 @@ if( isset($_POST["submit"]) ){
             </div>
             <div class="card shadow-lg">
               <div class="card-body p-5">
-                <h1 class="fs-4 card-title fw-bold mb-4">Ubah Data</h1>
+                <h1 class="fs-4 card-title fw-bold mb-4">Edit Data</h1>
                 <form  action="" method="post" class="needs-validation" >
+                    <input type="hidden" name="id" value="<?= $pasien["id"];?>" />
                 <div class="mb-3">
-                <input type="hidden" name="id" value="<?= $psn["id"]; ?>">
-                  </div>
-                    <input type="hidden" name="id" value="<?= $psn["id"]; ?>">
-                  <div class="mb-3">
                     <label class="mb-2 text-muted" for="Nama_Pasien">Nama Pasien :</label>
-                    <input id="Nama_Pasien" type="text" class="form-control" name="Nama_Pasien" required value="<?=$psn["Nama_Pasien"];?>"/>
+                    <input id="Nama_Pasien" type="text" class="form-control" name="Nama_Pasien" value="<?= $pasien["Nama_Pasien"];?>" required  />
                   </div>
+
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="Tempat_dan_Tanggal_Lahir">Tempat/Tanggal Lahir :</label>
-                    <input id="Tempat_dan_Tanggal_Lahir" type="text" class="form-control" name="Tempat_dan_Tanggal_Lahir" required value="<?=$psn["Tempat_dan_Tanggal_Lahir"];?>"/>
+                    <input id="Tempat_dan_Tanggal_Lahir" type="text" class="form-control" name="Tempat_dan_Tanggal_Lahir" value="<?= $pasien["Tempat_dan_Tanggal_Lahir"];?>" required  />
                   </div>
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="Jenis_Kelamin">Jenis Kelamin :</label>
-                    <input id="Jenis_Kelamin" type="text" class="form-control" name="Jenis_Kelamin" required value="<?=$psn["Jenis_Kelamin"];?>"/>
+                    <input id="Jenis_Kelamin" type="text" class="form-control" name="Jenis_Kelamin" value="<?= $pasien["Jenis_Kelamin"];?>" required/>
                   </div>
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="Nomor_Telepon">Nomor Telepon :</label>
-                    <input id="Nomor_Telepon" type="text" class="form-control" name="Nomor_Telepon" required value="<?=$psn["Nomor_Telepon"];?>"/>
+                    <input id="Nomor_Telepon" type="text" class="form-control" name="Nomor_Telepon" value="<?= $pasien["Nomor_Telepon"];?>" required />
                   </div>
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="Email">Email :</label>
-                    <input id="Email" type="text" class="form-control" name="Email" value="" required value="<?=$psn["Email"];?>"/>
+                    <input id="Email" type="text" class="form-control" name="Email" value="<?= $pasien["Email"];?>" required />
                   </div>
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="Jenis_Penyakit">Gejala:</label>
-                    <input id="Jenis_Penyakit" type="text" class="form-control" name="Jenis_Penyakit" required value="<?=$psn["Jenis_Penyakit"];?>"/>
+                    <input id="Jenis_Penyakit" type="text" class="form-control" name="Jenis_Penyakit" value="<?= $pasien["Jenis_Penyakit"];?>" required/>
                   </div>
 
                   <div class="d-flex align-items-center">
-                    <button type="submit" class="btn btn-primary ms-auto" name="submit">ubah </button>
+                    <button type="submit" class="btn btn-primary ms-auto" name="submit">Ubah Data</button>
                   </div>
                 </form>
               </div>
@@ -95,4 +108,4 @@ if( isset($_POST["submit"]) ){
       </div>
     </section>
 </body>
-</html>
+</html>  

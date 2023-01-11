@@ -1,55 +1,37 @@
+<?php
+require '../functions.php';
+$pasien = query("SELECT * FROM datapasien");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-
-    <!-- icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
-
-    <!-- css -->
-    <link rel="stylesheet" href="style.css" />
-
-    <title>Mywebsite</title>
+    <title>Sejarah Rumah Sakit</title>
+    <link rel="stylesheet" href="style.css  " />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
   </head>
   <body>
-    <!-- awal navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-fm fixed-top">
-      <div class="container-md">
-        <a class="navbar-brand" href="#">
-          <img src="S.png" alt="" width="30" height="24" class="d-inline-block align-text-top" />
-          SITORUS
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+    <div class="container">
+      <img src="../image/logo2.png" alt="" width="50px"><b>Rumah Sakit Online</b>
+    </div>
+    <!--navbar -->
+        <!--navbar -->
+        <ul class="nav justify-content-center" style="position: sticky; position: -webkit-stciky; top: 0;  z-index: 1; background-color: rgb(255, 255, 255);">
+          <li class="nav-item">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="../profile/index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Pelayanan </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Online</a></li>
-                <li><a class="dropdown-item" href="#">Offline</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="btn btn-primary btn-primary" href="#" role="button">Daftar Online</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- akhir navbar -->
+            <a class="nav-link" href="index.php">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tentang.php">Pelayanan</a>
+          </li>
+          <li>
+          <a href="../tambah.php" class="btn btn-primary ms-auto">Daftar</a>
+          </li>
+        </ul>
+
     <!--Opening-->
     <div id="carouselExampleInterval" class="carousel slide mt-5" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -126,20 +108,15 @@
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#f3f4f5"
-          fill-opacity="1"
-          d="M0,64L48,58.7C96,53,192,43,288,64C384,85,480,139,576,160C672,181,768,171,864,154.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
     </section>
     <!-- Akhir Hobby -->
 
     <!-- footer -->
-    <footer class="bg-dark text-white text-center pb-1">
-      <p>Create with <i class="bi bi-chat-square-heart-fill"></i> by <a href="https://www.youtube.com/channel/UCSS6w68aI5h0DnVRj2KU6SQ" class="text-white">Official Yozy</a></p>
+    <footer class="bg-warning text-white text-center pb-1">
+      <p>Create with <i class="bi bi-chat-square-heart-fill"></i> by <a href="https://id.wikipedia.org/wiki/Rumah_sakit" class="text-white" style="text-decoration: none">RS Online</a></p>
     </footer>
     <!-- batas footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>

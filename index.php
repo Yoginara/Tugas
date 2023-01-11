@@ -1,6 +1,11 @@
 <?php
 require 'functions.php';
 $pasien = query("SELECT * FROM datapasien");
+
+if(isset($_POST["cari"])){
+    $pasien = cari($_POST["keyword"]);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +18,28 @@ $pasien = query("SELECT * FROM datapasien");
 </head>
 </head>
 <body>
+            <!--navbar -->
+            <ul class="nav justify-content-center" style="position: sticky; position: -webkit-stciky; top: 0;  z-index: 1; background-color: #C0C0C0;">
+          <li class="nav-item">
+            <li class="nav-item">
+              <a class="nav-link" href="profile/index.php">Home</a>
+            </li>
+            <a class="nav-link" href="content/index.php">Profile</a>
+          </li>
+        </ul>
+
       <div class="container-md">
             <div class="text-center my-5">
               <img src="image/logo.png" alt="logo" width="200" />
             </div>
-            <h1 class="text-center mb-5">Dafstar Pasien</h1>
+            <h1 class="text-center mb-5">Daftar Pasien</h1>
+            <form action="" method="post">
+                <input type="text" name="keyword" autofocus placeholder="Cari nama..." autocomplete="off">
+                <button type="submit" name="cari">Search</button>
+            </form>
+
                 <table class="table table-bordered">
-                    <tr style="text-align: center;">
+                    <tr style="text-align: center;" class="table-warning">
                         <th>No</th>
                         <th>Nama Pasien</th>
                         <th>Tempat/Tanggal Lahir</th>
@@ -31,7 +51,7 @@ $pasien = query("SELECT * FROM datapasien");
                     </tr>
                     <?php $i = 1;?>
                 <?php foreach($pasien as $row) : ?>
-                    <tr>
+                    <tr class="table-secondary">
                         <td><?= $i; ?></td>
                         <td><?= $row["Nama_Pasien"]; ?></td>
                         <td><?= $row["Tempat_dan_Tanggal_Lahir"]; ?></td>
@@ -41,8 +61,8 @@ $pasien = query("SELECT * FROM datapasien");
                         <td><?= $row["Jenis_Penyakit"]; ?></td>
                         
                         <td>
-                            <a href="ubah.php?id=<?= $row["id"]; ?>">ubah</a> | 
-                            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Anda Yakin ?');">hapus</a>
+                            <a href="ubah.php?id=<?= $row["id"];?>"><button type="button" class="btn btn-info">Edit</button></a>  
+                            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Anda Yakin ?');"><button type="button" class="btn btn-danger">Delete</button></a>
                         </td>
                     </tr>
                     <?php $i++; ?>

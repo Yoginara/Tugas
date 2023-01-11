@@ -1,11 +1,15 @@
 .jumbotron {
-  padding-top: 7em;
-}
-
-#hobby {
-  background-color: rgb(200, 200, 200);
+  padding-top: 5em;
 }
 
 .title {
   text-align: center;
+}
+
+#about {
+  background-image: url('../image/hospital.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 9%;
+  padding-bottom: 9%;
 }

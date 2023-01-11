@@ -41,7 +41,6 @@ function hapus($id) {
 
 function ubah($data){
     global $connect;
-    
     $id = $data["id"];
     $nama = htmlspecialchars($data["Nama_Pasien"]);
     $lahir= htmlspecialchars($data["Tempat_dan_Tanggal_Lahir"]);
@@ -50,18 +49,32 @@ function ubah($data){
     $email = htmlspecialchars($data["Email"]);
     $penyakit = htmlspecialchars($data["Jenis_Penyakit"]);
 
-    $query = "UPDATE datapasien SET 
-                    nama = '$nama',
-                    lahir = '$lahir',
-                    gender = '$gender',     
-                    telepon = '$telepon',
-                    email = '$email',
-                    penyakit = '$penyakit
-                WHERE id = $id 
+    $query = "UPDATE datapasien SET
+                    Nama_Pasien = '$nama',
+                    Tempat_dan_Tanggal_Lahir = '$lahir',
+                    Jenis_Kelamin = '$gender',
+                    Nomor_Telepon = '$telepon',
+                    Email = '$email',
+                    Jenis_Penyakit = '$penyakit'
+                    WHERE id = $id
                     ";
 
     mysqli_query($connect, $query);
     return mysqli_affected_rows($connect);
 }
+
+
+function cari($keyword){
+    $query = "SELECT * FROM datapasien
+                    WHERE
+                Nama_Pasien LIKE '%$keyword%' OR
+                Jenis_Penyakit LIKE '%$keyword%' OR
+                Jenis_Kelamin LIKE '%$keyword%'
+                    ";
+
+    return query($query); 
+}
+      
+
 
 ?>
