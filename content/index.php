@@ -1,7 +1,3 @@
-<?php
-require '../functions.php';
-$pasien = query("SELECT * FROM datapasien");
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
