@@ -1,7 +1,7 @@
 <?php
 require 'functions.php'; 
 
-if( isset($_POST["submit"]) ){
+if( isset($_POST["tambah"]) ){
 
   
 
@@ -9,7 +9,7 @@ if( isset($_POST["submit"]) ){
       if( tambah($_POST) > 0 ){
     echo "<script>
             alert('Data Berhasil Ditambahkan !');
-            document.location.href = 'index.php';
+            document.location.href = 'antrian/antrian.php';
           </script>";
       } else {
         echo "<script>
@@ -85,8 +85,10 @@ if( isset($_POST["submit"]) ){
                     <input id="Jenis_Penyakit" type="text" class="form-control" name="Jenis_Penyakit" required/>
                   </div>
 
+                  
+
                   <div class="d-flex align-items-center">
-                    <button type="submit" class="btn btn-primary ms-auto" name="submit">Tambah</button>
+                    <button type="submit" class="btn btn-primary ms-auto" name="tambah">Tambah</button>
                   </div>
                 </form>
               </div>

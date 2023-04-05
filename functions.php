@@ -24,9 +24,9 @@ function tambah($data){
     $penyakit = htmlspecialchars($data["Jenis_Penyakit"]);
 
     $query = "INSERT INTO datapasien
-    VALUES
-('', '$nama', '$lahir', '$gender','$telepon', '$email', '$penyakit' )    
-";
+                    VALUES
+            ('', '$nama', '$lahir', '$gender','$telepon', '$email', '$penyakit' )    
+        ";
 
     mysqli_query($connect, $query);
     return mysqli_affected_rows($connect);
@@ -76,5 +76,27 @@ function cari($keyword){
 }
       
 
+function get_next_queue_number(){
+    global $connect;
+    // retrieve the current maximum queue number from the database
+    $query = "SELECT MAX(queue_number) as max_number FROM datapasien";
+    $result = mysqli_query($connect, $query);
+    $row = mysqli_fetch_assoc($result);
+    $max_number = $row['max_number'];
+
+    // if there are no existing queue numbers, start from 1
+    if($max_number === null){
+        return 1;
+    }
+
+    // otherwise, increment the current maximum queue number by 1
+    return $max_number + 1;
+}
+
+$queue_number = get_next_queue_number();
+$doctor = "John Smith";
+$time = "2:00 PM";
+
+      
 
 ?>

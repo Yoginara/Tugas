@@ -22,7 +22,15 @@
           <li>
           <a href="../tambah.php" class="btn btn-primary ms-auto">Daftar</a>
           </li>
+          <li class="About"> 
+            <a class="nav-link" href="../content/index.php">About</a>
+          </li>
         </ul>
+        
+  
+      
+        
+      
     <!-- home -->
     <section class="jumbotron text-center">
       <img src="../image/logo2.png" alt="foto yoginara" width="200" class="rounded-circle img-thumbnail" />

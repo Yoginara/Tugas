@@ -41,6 +41,7 @@ if(isset($_POST["cari"])){
                 <table class="table table-bordered">
                     <tr style="text-align: center;" class="table-warning">
                         <th>No</th>
+                        <th>Nomor antrian</th>
                         <th>Nama Pasien</th>
                         <th>Tempat/Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
@@ -48,11 +49,13 @@ if(isset($_POST["cari"])){
                         <th>Email</th>
                         <th>Jenis Penyakit</th>
                         <th>Aksi</th>
+                        
                     </tr>
                     <?php $i = 1;?>
                 <?php foreach($pasien as $row) : ?>
                     <tr class="table-secondary">
                         <td><?= $i; ?></td>
+                        <td><?= $row["queue_number"]; ?></td>
                         <td><?= $row["Nama_Pasien"]; ?></td>
                         <td><?= $row["Tempat_dan_Tanggal_Lahir"]; ?></td>
                         <td><?= $row["Jenis_Kelamin"]; ?></td>
